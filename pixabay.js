@@ -1,6 +1,7 @@
-// we assign our endpoint to a variable
+// we assign our endpoint to a variablegi
 let pics = [
 // here we have our endpoint All pasted from Postman
+//foo
     // {
     // "total": 1746657,
     // "totalHits": 500,
