@@ -1,3 +1,55 @@
-.class  {
+/* body{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
 
+.testdiv, .h1 {
+    background-color: rgb(24, 24, 25);
+    font: 25px;
+    padding: 20px;
+    color: brown;
+} */
+
+body{
+    font-family: monospace;
+    background-color: rgb(205, 205, 205);
+}
+h1{
+    background-color: black;
+    color: brown;
+}
+.navbar{
+    background-color: rgb(43, 156, 255);
+    /* display:flex; */
+    /* justify-content: center; */
+    padding-top: 10px;
+    padding-left: 10px;
+}
+/* making our grid structure */
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+    "header header header header"
+    "title title title title"
+    "maintext maintext maintext maintext"
+    "pics pics pics pics"
+    "footer footer footer footer";
+    grid-template-columns: 1fr 1fr 0fr 1fr;
+    grid-template-rows: 0fr 0fr 0fr 1fr 0fr;
+    /* grid-gap: 10px; */
+
+}
+.navbar{
+    grid-area: header;
+}
+.title{
+    grid-area: title;
+}
+.maintext{
+    grid-area: maintext;
+}
+.text-center{
+    grid-area: pics;
+}
+.footer{
+    grid-area: footer;
 }
