@@ -8,24 +8,29 @@
     padding: 20px;
     color: brown;
 } */
+.maintext{
+    
+    background-image: url(/global-6635477_1280.png);
+    padding: 150px;
+}
 
-body{
+/* body{
     font-family: monospace;
     background-color: rgb(205, 205, 205);
-}
-h1{
+} */
+/* h1{
     background-color: black;
     color: brown;
-}
-.navbar{
-    background-color: rgb(43, 156, 255);
+} */
+/* .navbar{ */
+    /* background-color: rgb(43, 156, 255); */
     /* display:flex; */
     /* justify-content: center; */
-    padding-top: 10px;
+    /* padding-top: 10px;
     padding-left: 10px;
-}
+} */
 /* making our grid structure */
-.grid-container{
+/* .grid-container{ */
     display: grid;
     grid-template-areas: 
     "header header header header"
