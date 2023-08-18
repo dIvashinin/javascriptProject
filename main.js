@@ -34,6 +34,7 @@ const getData = () => {
     })
     .then((result) => {
         // console.log(result);
+        //here important to be in a right directory for ex. inside of hits in my case
       const pics = result.hits;
     //   console.log(result);
       buildCards(pics);
@@ -56,8 +57,8 @@ console.log(pics.hits);
     // console.log(pics.hits);
     //card div
     const cardDiv = document.createElement("div");
-    cardDiv.setAttribute("class", "card col-sm-12 col-md-6 col-lg-2 ");
-    cardDiv.setAttribute("style", "width: 18rem;");
+    cardDiv.setAttribute("class", "col-sm-12 col-md-4 col-lg-3 col-xxl-2 ");
+    // cardDiv.setAttribute("style", "width: 18rem;");
     // so we created it above and now let's put it in our html
     cardsContainer.appendChild(cardDiv);
 
@@ -70,6 +71,7 @@ console.log(pics.hits);
     image.setAttribute("alt", pics[i].tags);
     //we add bootstrap class
     image.setAttribute("class", "card-img-top");
+    
     //and our image goes in this cardDiv we made before
     cardDiv.appendChild(image);
 
@@ -83,7 +85,7 @@ console.log(pics.hits);
     //another way of adding a class to a variable
     h5.classList.add("card-title");
     h5.innerText = pics[i].downloads;
-    cardBody.appendChild(h5);
+    // cardBody.appendChild(h5);
 
     //adding p tag
     const p = document.createElement("p");
@@ -104,3 +106,20 @@ console.log(pics.hits);
 // }
 
 // addEventListener();
+
+// function from W3Schools read more--read less
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
