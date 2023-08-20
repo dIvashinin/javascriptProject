@@ -1,4 +1,4 @@
-// we assign our endpoint to a variablegi
+// we assign our endpoint to a variable
 let pics = [
 // here we have our endpoint All pasted from Postman
 //foo

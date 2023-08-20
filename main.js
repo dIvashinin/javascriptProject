@@ -1,3 +1,4 @@
+// function that builds table and fills it with pics from api
 // let tableBody = document.querySelector("tbody");
 // function buildPicsTable() {
   // getElementsByTagName returns an ARRAY of elements (even if there is just one)
