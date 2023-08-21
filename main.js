@@ -27,28 +27,77 @@
 // }
 // buildPicsTable();
 
-const getData = () => {
-  fetch("https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085")
-    .then((response) => {
-      console.log(response);
-      return response.json();
-    })
-    .then((result) => {
-        // console.log(result);
-        //here important to be in a right directory for ex. inside of hits in my case
-      const pics = result.hits;
-    //   console.log(result);
-      buildCards(pics);
-      console.log("result", result);
-      return result;
-    });
+// const getData = () => {
+//   fetch("https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085")
+//     .then((response) => {
+//       console.log(response);
+//       return response.json();
+//     })
+//     .then((result) => {
+//         // console.log(result);
+//         //here important to be in a right directory for ex. inside of hits in my case
+//       const pics = result.hits;
+//     //   console.log(result);
+//       buildCards(pics);
+//       console.log("result", result);
+//       return result;
+//     });
     
+// };
+// getData();
+
+// creating a fetch function
+const fetchPics = () => {
+  const url = "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&category=music&per_page=30&page=5";
+  fetch (url).then((response) => {
+    return response.json();
+  })
+  .then((result) =>{
+    console.log('result :>> ', result);
+    const pics = result.hits;
+    controller(pics);
+    // createDropdown(pics);
+    // buildCards(pics);
+  });
 };
-getData();
+
+// fetchPics();
+
+// generate DropDown options
+const createDropdown = (pics) => {
+  // console.log('pics in dropdown :>> ', pics);
+  const dropdown = document.getElementById("imageDropdown");
+
+  //we use map - that's a loop
+  const picsArray = pics.map((pic) =>{
+    return pic.type;
+  });
+  
+  // console.log('picsArray :>> ', picsArray);
+  //we use spread operator ... inside of new Set array to make it an array []
+  //plus we combine it with new Set element which saves only unique elements
+  const uniquePicsArray = [...new Set(picsArray)];
+  console.log('uniquePicsArray :>> ', uniquePicsArray);
+
+
+  //and instead of looping over our pics Array, we better loop over unique array
+  // picType here means the single item of an array, the naming can be different
+  uniquePicsArray.forEach((picType) => {
+    // console.log('pic :>> ', pic);
+    const option = document.createElement ("option");
+    //inside of a dropdown we have now type of each pic
+    option.innerText = picType;
+    
+    dropdown.appendChild(option);
+
+  });
+  
+};
 
 
 //we are building a card from Bootstrap library ourselves
 function buildCards(pics) {
+  
   const cardsContainer = document.querySelector(".row");
   // const cardsContainer = document.getElementById("cards-container");
 //   console.log(cardsContainer);
@@ -65,6 +114,7 @@ console.log(pics.hits);
 
     //now the image// we create a variable
     const image = document.createElement("img");
+    image.innerHTML="";
     //set source// mind the syntax!
     // result.hits[i]
     image.setAttribute("src", pics[i].webformatURL);
@@ -99,14 +149,7 @@ console.log(pics.hits);
 
 // buildCards();
 
-// function addEventListener() {
-//     const regularButton = document.getElementById("regular-button");
-//     regularButton.addEventListener("click", function2 () {
 
-//     }
-// }
-
-// addEventListener();
 
 // function from W3Schools read more--read less
 function myFunction() {
@@ -124,3 +167,56 @@ function myFunction() {
     moreText.style.display = "inline";
   }
 }
+
+//from here we control all our functions
+function controller (pics) {
+//inside we have all the functions we gonna need
+// instead of calling them in different places
+//easier to debug
+
+//get the data
+
+//build cards with images
+buildCards(pics);
+
+//create dropdown
+createDropdown(pics);
+
+//set event listener
+setEventListeners(pics);
+//create filter functions
+
+}
+
+const setEventListeners = (pics) => {
+const picDropdown = document.querySelector("#imageDropdown");
+picDropdown.addEventListener("change", () => {
+// console.log('dropdown selected :>> ');
+
+//here goes our filter function
+filterByDropdown(pics);
+
+});
+};
+
+//filter by dropdown
+image.setAttribute("src", "");
+const filterByDropdown = (pics) => {
+  // get dropdown value
+  const picDropdown = document.querySelector("#imageDropdown");
+  //we need to access to the value of the array:
+  const picDropdownValue = picDropdown.value;
+  console.log('picDropdownValue :>> ', picDropdownValue);
+  console.log('pics in filt by dropdown:>> ', pics);
+  console.log("filtering by dropdown");
+
+  const filteredArray = pics.filter((pic) => {
+    console.log('pic :>> ', pic);
+    return picDropdownValue === pic.type;
+  });
+  console.log('filteredArray :>> ', filteredArray);
+  buildCards(pics);
+};
+
+//this main function is in the end - like the most important one
+fetchPics();
