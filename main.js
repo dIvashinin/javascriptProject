@@ -52,6 +52,7 @@ const fetchPics = () => {
   fetch (url).then((response) => {
     return response.json();
   })
+  // foo
   .then((result) =>{
     console.log('result :>> ', result);
     const pics = result.hits;
