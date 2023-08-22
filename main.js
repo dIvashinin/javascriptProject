@@ -114,7 +114,7 @@ console.log(pics.hits);
 
     //now the image// we create a variable
     const image = document.createElement("img");
-    image.innerHTML="";
+    // img.innerHTML="";
     //set source// mind the syntax!
     // result.hits[i]
     image.setAttribute("src", pics[i].webformatURL);
@@ -200,7 +200,7 @@ filterByDropdown(pics);
 };
 
 //filter by dropdown
-image.setAttribute("src", "");
+
 const filterByDropdown = (pics) => {
   // get dropdown value
   const picDropdown = document.querySelector("#imageDropdown");
