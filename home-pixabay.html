@@ -29,19 +29,51 @@
         
         
       </div>
-      <button type="button" class="btn btn-outline-primary">do it</button>
+      <!-- <button type="button" class="btn btn-outline-primary">do it</button>
         <button type="button" class="btn btn-outline-info">Info</button>
-        <button type="button" class="btn btn-outline-dark">Dark</button>
+        <button type="button" class="btn btn-outline-dark">Dark</button> -->
         <div class="btn-group" role="group">
             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              Image type
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-              <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+              <li><a class="dropdown-item" href="#">all</a></li>
+              <li><a class="dropdown-item" href="#">photo</a></li>
+              <li><a class="dropdown-item" href="#">illustration</a></li>
+              <li><a class="dropdown-item" href="#">vector</a></li>
             </ul>
-          </div>
-      <!-- adding a div for a dropdown filter wgich gonna filter by type of pics -->
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+          <label class="form-check-label" for="inlineCheckbox1">nature</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+          <label class="form-check-label" for="inlineCheckbox2">places</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+          <label class="form-check-label" for="inlineCheckbox3">animals</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+          <label class="form-check-label" for="inlineCheckbox3">science</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+          <label class="form-check-label" for="inlineCheckbox3">food</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+          <label class="form-check-label" for="inlineCheckbox3">travel</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+          <label class="form-check-label" for="inlineCheckbox3">buildings</label>
+        </div>
+
+      <!-- adding a div for a dropdown filter which gonna filter by type of pics -->
       <div class="container">
         <select name="formats" id="imageDropdown">
           <option value="all">All</option>
@@ -62,7 +94,7 @@
       <!-- that's where our pics go -->
       
       <div class="container text-center" id="cards-container">
-        <div class="row">
+        <div class="row" id="cardDivContent">
 
         </div>
       </div>

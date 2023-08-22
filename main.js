@@ -48,7 +48,11 @@
 
 // creating a fetch function
 const fetchPics = () => {
-  const url = "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&category=music&per_page=30&page=5";
+  ``
+  // const url = "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&category=music&per_page=30&page=5";
+
+  // by default i set filter view horizontal and color blue and editor's choice
+  const url = "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&editors_choice=true&colors=blue&orientation=horizontal";
   fetch (url).then((response) => {
     return response.json();
   })
@@ -100,9 +104,11 @@ const createDropdown = (pics) => {
 function buildCards(pics) {
   
   const cardsContainer = document.querySelector(".row");
+  // cardsContainer.innerHTML = "";
+  // cardDivContent.innerHTML = "";
   // const cardsContainer = document.getElementById("cards-container");
-//   console.log(cardsContainer);
-console.log(pics.hits);
+  console.log(cardsContainer);
+// console.log(pics.hits);
 
   for (let i = 0; i < pics.length; i++) {
     // console.log(pics.hits);
@@ -177,16 +183,16 @@ function controller (pics) {
 
 //get the data
 
-//build cards with images
-buildCards(pics);
 
 //create dropdown
-createDropdown(pics);
+// createDropdown(pics);
 
 //set event listener
 setEventListeners(pics);
 //create filter functions
 
+//build cards with images
+buildCards(pics);
 }
 
 const setEventListeners = (pics) => {

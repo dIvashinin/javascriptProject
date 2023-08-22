@@ -13,6 +13,14 @@
 }
 #more {display: none;}
 
+.btn-group{
+    /* display:inline; */
+    /* justify-content: right; */
+}
+html{
+    background-color: rgb(173, 199, 227);
+}
+
 .maintext{
     
     background-image: url(/x_158a43c2.jpg);
