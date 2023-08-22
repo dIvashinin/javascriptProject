@@ -5,73 +5,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pixabay Project</title>
     <link rel="stylesheet" href="/styles.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <!-- creating a large div for everything and putting other elements inside -->
     <div class="grid-container">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-md">
-              <a class="navbar-brand" href="#">Home</a>
-              <a class="navbar-brand" href="#">Something</a>
-            </div>
-          </nav>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-md">
+          <a class="navbar-brand" href="#">Home</a>
+          <a class="navbar-brand" href="https://pixabay.com/">Pixabay.com</a>
+        </div>
+      </nav>
       <!-- <div class="title">
         <h1>Lorem ipsum dolor sit amet.</h1>
       </div> -->
-      <div class="maintext">
+      <div class="topimage"></div>
+      
+      <div class="maintext2">
         <h1>free pics are made of these</h1>
         <p>
-          Free pics that you can find here are REALLY free. Even this one you see. Even to download. Of course nothing stops you to donate to the author of a picture and sure upload your own stuff. All we ask for is <span id="dots">...</span><span id="more"> to be a nice person and use pics carefully. Use, enjoy, donate, recommend, follow. That's it. Pretty easy. Go try yourself!
-        </span>
-        <button onclick="myFunction()" id="myBtn" class="btn btn-outline-primary" >Read more</button>
-      </p>
-        
-        
-      </div>
-      <!-- <button type="button" class="btn btn-outline-primary">do it</button>
+          Free pics that you can find here are REALLY free. Even this one you
+          see. Even to download. Of course nothing stops you to donate to the
+          author of a picture and sure upload your own stuff. All we ask for is
+          <span id="dots">...</span
+          ><span id="more">
+            to be a nice person and use pics carefully. Use, enjoy, donate,
+            recommend, follow. That's it. Pretty easy. Go try yourself!
+          </span>
+          <button
+            onclick="myFunction()"
+            id="myBtn"
+            class="btn btn-outline-primary"
+          >
+            Read more
+          </button>
+        </p>
+
+        <div id="filter-elements">
+        <!-- <button type="button" class="btn btn-outline-primary">do it</button>
         <button type="button" class="btn btn-outline-info">Info</button>
         <button type="button" class="btn btn-outline-dark">Dark</button> -->
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Image type
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">all</a></li>
-              <li><a class="dropdown-item" href="#">photo</a></li>
-              <li><a class="dropdown-item" href="#">illustration</a></li>
-              <li><a class="dropdown-item" href="#">vector</a></li>
-            </ul>
+        <!-- <div class="btn-group" role="group">
+          <button
+            type="button"
+            class="btn btn-primary dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Image type
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">all</a></li>
+            <li><a class="dropdown-item" href="#">photo</a></li>
+            <li><a class="dropdown-item" href="#">illustration</a></li>
+            <li><a class="dropdown-item" href="#">vector</a></li>
+          </ul>
+        </div> -->
+        <div class="dropdown">
+          <button class="dropbtn">Image type</button>
+          <div class="dropdown-content">
+            <a href="#">All</a>
+            <a href="#">Photo</a>
+            <a href="#">Illustration</a>
+            <a href="#">Vector</a>
+          
+          </div>
         </div>
 
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label" for="inlineCheckbox1">nature</label>
+        <div class="dropdown">
+          <button class="dropbtn">Categories</button>
+          <div class="dropdown-content">
+            <a href="#">Nature</a>
+            <a href="#">Science</a>
+            <a href="#">Places</a>
+            <a href="#">Animals</a>
+            <a href="#">Computer</a>
+            <a href="#">Food</a>
+            <a href="#">Buildings</a>
+          </div>
         </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-          <label class="form-check-label" for="inlineCheckbox2">places</label>
+
+        <div class="dropdown">
+          <button class="dropbtn">Colors</button>
+          <div class="dropdown-content">
+            <a href="#" style="color: red;" >Red</a>
+            <a href="#" style="color: green;" >Green</a>
+            <a href="#" style="color: blue;" >Blue</a>
+            <a href="#" style="color: black;" >Black</a>
+            <a href="#" style="color: white; background-color: rgb(183, 183, 183);" >White</a>
+            <a href="#" style="color: pink; background-color: rgb(183, 183, 183);" >Pink</a>
+            <a href="#" style="color: yellow; background-color: rgb(183, 183, 183);" >Yellow</a>
+          </div>
         </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-          <label class="form-check-label" for="inlineCheckbox3">animals</label>
+
+
+
+        <!-- <div class="form-radio form-radio-inline">
+          <input
+            class="form-radio-input"
+            type="radio"
+            id="inlineRadio1"
+            value="option1"
+          />
+          <label class="form-radio-label" for="inlineRadio1">black</label>
         </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-          <label class="form-check-label" for="inlineCheckbox3">science</label>
+        
+        <div class="form-radio form-radio-inline">
+          <input
+            class="form-radio-input"
+            type="radio"
+            id="inlineRadio2"
+            value="option2"
+          />
+          <label class="form-radio-label" for="inlineRadio2">red</label>
         </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-          <label class="form-check-label" for="inlineCheckbox3">food</label>
+        <div class="form-radio form-radio-inline">
+          <input
+            class="form-radio-input"
+            type="radio"
+            id="inlineRadio3"
+            value="option3"
+          />
+          <label class="form-radio-label" for="inlineRadio3">orange</label>
         </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-          <label class="form-check-label" for="inlineCheckbox3">travel</label>
+        <div class="form-radio form-radio-inline">
+          <input
+            class="form-radio-input"
+            type="radio"
+            id="inlineRadio4"
+            value="option4"
+          />
+          <label class="form-radio-label" for="inlineRadio4">yellow</label>
         </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-          <label class="form-check-label" for="inlineCheckbox3">buildings</label>
+        <div class="form-radio form-radio-inline">
+          <input
+            class="form-radio-input"
+            type="radio"
+            id="inlineRadio5"
+            value="option5"
+          />
+          <label class="form-radio-label" for="inlineRadio5">green</label>
         </div>
+        <div class="form-radio form-radio-inline">
+          <input
+            class="form-radio-input"
+            type="radio"
+            id="inlineRadio6"
+            value="option6"
+          />
+          <label class="form-radio-label" for="inlineRadio6">blue</label>
+        </div>
+        <div class="form-radio form-radio-inline">
+          <input
+            class="form-radio-input"
+            type="radio"
+            id="inlineRadio7"
+            value="option7"
+          />
+          <label class="form-radio-label" for="inlineRadio7">white</label
+          >
+        </div> -->
+      </div>
 
       <!-- adding a div for a dropdown filter which gonna filter by type of pics -->
       <div class="container">
@@ -81,7 +180,7 @@
       </div>
 
       <!-- trying to make a table in a div with our request result  -->
-      
+
       <!-- <div id="pictures-result">
             <table>
                 <thead>
@@ -92,27 +191,32 @@
             </table>
       </div> -->
       <!-- that's where our pics go -->
+
       
-      <div class="container text-center" id="cards-container">
-        <div class="row" id="cardDivContent">
-
-        </div>
-      </div>
-
-      <div class="footer">
-        <a  href="#">Insta</a>
-        <a  href="#">Facebook</a>
-        <a  href="#">Terms</a>
-      </div>
     </div>
-    <!-- foo -->
 
     
+    <div class="container text-center" id="cards-container">
+      <div class="row" id="cardDivContent"></div>
+    </div>
+
+    <div class="footer1">
+      <a href="#">Insta</a>
+      <a href="#">Facebook</a>
+      <a href="#">Terms</a>
+    </div>
 
     <!-- <script src="pixabay.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+      crossorigin="anonymous"
+    ></script>
     <script src="main.js"></script>
-
   </body>
 </html>

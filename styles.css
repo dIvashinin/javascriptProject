@@ -8,45 +8,102 @@
     padding: 20px;
     color: brown;
 } */
-.navbar{
-    height: 40px;
+.navbar {
+  height: 40px;
 }
-#more {display: none;}
-
-.btn-group{
-    /* display:inline; */
-    /* justify-content: right; */
-}
-html{
-    background-color: rgb(173, 199, 227);
+#more {
+  display: none;
 }
 
-.maintext{
-    
-    background-image: url(/x_158a43c2.jpg);
-    /* repeats image horisontally */
-    background-repeat: repeat-x; 
-    /* background-repeat: no-repeat; */
-  background-position:top;
+/* Dropdown Button */
+.dropbtn {
+    background-color: #0420aa;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #6e7bb7;}
+  
+
+html {
+  background-color: rgb(173, 199, 227);
+}
+
+.topimage {
+  background-image: url(/x_158a43c2.jpg);
+  opacity: 70%;
+  /* repeats image horisontally */
+  background-repeat: repeat-x;
+  /* background-repeat: no-repeat; */
+  background-position: top;
   /* border-style: dotted;  */
-  padding-top: 320px;
-  padding-left: 150px;
-  padding-right: 150px;
-  padding-bottom: 50px;
-  font-size: 20px;
+  padding-top: 260px;
+  /* padding-left: 150px; */
+  /* padding-right: 150px; */
+  /* padding-bottom: 50px; */
+  /* font-size: 20px; */
 
 }
-.card-text{
-    font-size: 14px;
-    font-family:monospace;
+
+#cards-container{
+background-color: rgb(241, 241, 241);
+padding-top: 20px;
+padding-bottom: 20px;
 }
-.maintext{
-    font-family: monospace;
+.maintext2 {
+    background-color: #c2c6db;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 50px;
+    font-size: 20px;
+  }
+.card-text {
+  font-size: 14px;
+  font-family: monospace;
 }
-.footer{
-    width: 100%;
-    display: inline;
-    position: static;
+.maintext, .maintext2 {
+  font-family: monospace;
+}
+.footer1 {
+  /* width: 100%; */
+  /* display: inline; */
+  /* position: static; */
+  background-color:#a7afd2;
+  color: black;
+  height: 40px;
 }
 
 /* body{
@@ -58,15 +115,15 @@ html{
     color: brown;
 } */
 /* .navbar{ */
-    /* background-color: rgb(43, 156, 255); */
-    /* display:flex; */
-    /* justify-content: center; */
-    /* padding-top: 10px;
+/* background-color: rgb(43, 156, 255); */
+/* display:flex; */
+/* justify-content: center; */
+/* padding-top: 10px;
     padding-left: 10px;
 } */
 /* making our grid structure */
 /* .grid-container{ */
-    /* display: grid;
+/* display: grid;
     grid-template-areas: 
     "header header header header"
     "title title title title"
