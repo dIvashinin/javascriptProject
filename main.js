@@ -52,7 +52,7 @@ const fetchPics = () => {
   // const url = "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&category=music&per_page=30&page=5";
 
   // by default i set filter view horizontal and color blue and editor's choice
-  const url = "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&editors_choice=true&colors=blue&orientation=horizontal";
+  const url = "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&per_page=40&editors_choice=true&colors=blue&orientation=horizontal";
   fetch (url).then((response) => {
     return response.json();
   })
@@ -166,11 +166,11 @@ function myFunction() {
 
   if (dots.style.display === "none") {
     dots.style.display = "inline";
-    btnText.innerHTML = "Read more";
+    btnText.innerHTML = "read more";
     moreText.style.display = "none";
   } else {
     dots.style.display = "none";
-    btnText.innerHTML = "Read less";
+    btnText.innerHTML = "read less";
     moreText.style.display = "inline";
   }
 }
@@ -186,13 +186,13 @@ function controller (pics) {
 
 //create dropdown
 // createDropdown(pics);
+//build cards with images
+buildCards(pics);
 
 //set event listener
 setEventListeners(pics);
 //create filter functions
 
-//build cards with images
-buildCards(pics);
 }
 
 const setEventListeners = (pics) => {
