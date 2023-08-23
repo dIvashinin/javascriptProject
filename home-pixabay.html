@@ -18,6 +18,7 @@
     <!-- creating a large div for everything and putting other elements inside -->
     <div class="grid-container">
 
+      <!-- bootstrap nav bar copy pasted -->
       <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Home</a>
@@ -113,11 +114,12 @@
         </div> -->
         <div class="dropdown">
           <button class="dropbtn">Image type</button>
-          <div class="dropdown-content">
-            <a href="#">All</a>
-            <a href="#">Photo</a>
-            <a href="#">Illustration</a>
-            <a href="#">Vector</a>
+          <div class="dropdown-content" id="dropdown">
+            <a href="#" value="all" >All</a>
+            <a href="#" value="photo" >Photo</a>
+            <a href="#" value="illustration" >Illustration</a>
+            <a href="#" value="vector">Vector</a>
+            <!-- <a href="#" onclick="fetchPicsVector()" id="vectorDrop">Vector</a> -->
           
           </div>
         </div>
@@ -147,7 +149,7 @@
             <a href="#" style="color: yellow;" >Yellow</a>
           </div>
         </div>
-
+          <button id="fetchButton">let's go</button>
 
 
         <!-- <div class="form-radio form-radio-inline">
@@ -262,6 +264,7 @@
       integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
       crossorigin="anonymous"
     ></script>
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <script src="main2.js"></script>
   </body>
 </html>
