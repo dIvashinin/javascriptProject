@@ -75,6 +75,19 @@
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #6e7bb7;}
   
+.radio-colors{
+    display: flex;
+    font-size: 10px;
+    /* border-style: dotted; */
+    gap: 4px;
+    margin-top: 8px;
+}
+#filter-elements{
+    /* border-style: dotted; */
+    background-color: #cfcfcf;
+    padding: 8px;
+    border-radius: 10px;
+}
 
 html {
   background-color: rgb(173, 199, 227);
@@ -98,9 +111,10 @@ html {
 }
 
 #cards-container{
-background-color: rgb(241, 241, 241);
+/* background-color: rgb(241, 241, 241); */
 padding-top: 20px;
 padding-bottom: 20px;
+display: inline;
 }
 .maintext2 {
     background-color: #c2c6db;
@@ -109,6 +123,10 @@ padding-bottom: 20px;
     padding-bottom: 50px;
     font-size: 20px;
     margin-bottom: 20px;
+  }
+  p{
+    /* background-color: #a3aac9; */
+    padding: 6px;
   }
 .card-text {
   font-size: 14px;

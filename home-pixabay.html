@@ -52,7 +52,7 @@
                   </ul>
                 </li> -->
               </ul>
-              <form class="d-flex mt-3" role="search">
+              <form class="d-flex mt-3" role="search" id="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-success" type="submit">Search</button>
               </form>
@@ -113,6 +113,7 @@
           </ul>
         </div> -->
         <div class="dropdown">
+          
           <button class="dropbtn">Image type</button>
           <select class="dropdown-content" id="dropdown1">
             <option value="all">all</option>
@@ -165,6 +166,15 @@
         </div>
           <button id="fetchButton">let's go</button> -->
 
+        <div class="radio-colors" id="radio_colors">
+          <input type="radio" id="black" name="color" value="black">
+          <label for="black">black</label>
+          <input type="radio" id="red" name="color" value="red">
+          <label for="red">red</label>
+          <input type="radio" id="blue" name="color" value="blue">
+          <label for="blue">blue</label>
+          <button class="goColors" id="goColors">go</button>
+        </div>
 
         <!-- <div class="form-radio form-radio-inline">
           <input

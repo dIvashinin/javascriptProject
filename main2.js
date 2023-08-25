@@ -2,10 +2,18 @@
 //here is the trouble: i am accessing all of them, not the one
 // const dropdown = document.getElementsByClassName("dropdown-content");
 const dropdown1 = document.getElementById("dropdown1");
+// const dropdown1Value = dropdown1.value;
 const dropdown2 = document.getElementById("dropdown2");
+const radio = document.getElementById("radio_colors");
+const goButton = document.getElementById("goColors");
+const searchButton = document.getElementById("search");
 // const link = document.querySelectorAll("a");
 console.log("dropdown1 :>> ", dropdown1);
+// console.log('dropdown1Value :>> ', dropdown1Value);
+// console.log('typeof dropdown1Value :>> ', typeof dropdown1Value);
 console.log("dropdown2 :>> ", dropdown2);
+console.log('radio-colors :>> ', radio_colors);
+console.log('goButton :>> ', goButton);
 
 // console.log('link :>> ', link);
 // console.log('dropdown.value :>> ', dropdown.value);
@@ -33,16 +41,24 @@ const myFetch = (url)=> {
 
 // function addEventListenerToDropdown(dropdownId) {
 //     const dropdown = document.getElementById(dropdownId);
-
 //     dropdown.addEventListener("change", (event) => {
 //         const selectedValue = event.target.value;
-
 //     })
 // }
 
+searchButton.addEventListener ("change", (event) =>{
+    console.log('event :>> ', event.target.value);
+    const searchBar = event.target.value;
+    console.log('searchbar :>> ', searchBar);
+    const fetchURL = `https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&q=${searchBar}`;
+  
+  console.log(fetchURL);
+  myFetch(fetchURL);
+});
+
 //if i try to do a function on all dropdown elemets, it won't let me
 dropdown1.addEventListener ("change", (event) => {
-    console.log('event.target :>> ', event.target.value);
+    console.log('event.target :>> ', event);
 //   // const selectedOption = dropdown.dataset.value;
 // //   const selectedOption = "vector";
  const myDropDown = document.getElementById("dropdown1");
@@ -79,6 +95,7 @@ dropdown2.addEventListener ("change", (event) => {
 //we are building a card from Bootstrap library ourselves
 function buildCards(pics) {
   const cardsContainer = document.querySelector(".row");
+  //this is how we clear all the pics before the next search
   cardsContainer.innerHTML = "";
   // cardDivContent.innerHTML = "";
   // const cardsContainer = document.getElementById("cards-container");
