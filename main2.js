@@ -1,8 +1,11 @@
 // const fetchButton = document.getElementById("fetchButton");
 //here is the trouble: i am accessing all of them, not the one
-const dropdown = document.getElementsByClassName("dropdown-content");
+// const dropdown = document.getElementsByClassName("dropdown-content");
+const dropdown1 = document.getElementById("dropdown1");
+const dropdown2 = document.getElementById("dropdown2");
 // const link = document.querySelectorAll("a");
-console.log("dropdown :>> ", dropdown);
+console.log("dropdown1 :>> ", dropdown1);
+console.log("dropdown2 :>> ", dropdown2);
 
 // console.log('link :>> ', link);
 // console.log('dropdown.value :>> ', dropdown.value);
@@ -37,22 +40,41 @@ const myFetch = (url)=> {
 //     })
 // }
 
-
 //if i try to do a function on all dropdown elemets, it won't let me
-dropdown[1].addEventListener ("change", () => {
-    // console.log('event.target :>> ', event.target.value);
-  // const selectedOption = dropdown.dataset.value;
-//   const selectedOption = "vector";
- const myDropDown = document.querySelector('#dropdown');
+dropdown1.addEventListener ("change", (event) => {
+    console.log('event.target :>> ', event.target.value);
+//   // const selectedOption = dropdown.dataset.value;
+// //   const selectedOption = "vector";
+ const myDropDown = document.getElementById("dropdown1");
 //  const selectedOption = myDropDown.children.dataset.value;
  const selectedOption = myDropDown.value;
  console.log("selectedOption",selectedOption);
-//   console.log("selectedOption :>> ", selectedOption);
+// //   console.log("selectedOption :>> ", selectedOption);
   const fetchURL = `https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&image_type=${selectedOption}`;
+  
   console.log(fetchURL);
   myFetch(fetchURL);
-
 });
+
+dropdown2.addEventListener ("change", (event) => {
+    console.log('event.target :>> ', event.target.value);
+//   // const selectedOption = dropdown.dataset.value;
+// //   const selectedOption = "vector";
+ const myDropDown = document.getElementById("dropdown2");
+//  const selectedOption = myDropDown.children.dataset.value;
+ const selectedOption = myDropDown.value;
+ console.log("selectedOption",selectedOption);
+// //   console.log("selectedOption :>> ", selectedOption);
+  const fetchURL = `https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&category=${selectedOption}`;
+  
+  console.log(fetchURL);
+  myFetch(fetchURL);
+});
+
+// function fetchURL () {
+
+// }
+
 
 //we are building a card from Bootstrap library ourselves
 function buildCards(pics) {
@@ -105,3 +127,5 @@ function buildCards(pics) {
     cardBody.appendChild(p);
   }
 }
+
+// need to do 2 functions: one is going to display something by default, the 2nd will act after i press/choose/filter anything

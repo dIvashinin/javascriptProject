@@ -55,7 +55,7 @@ const fetchPicsDefault = () => {
     return response.json();
   })
   .then((result) =>{
-    console.log('result :>> ', result);
+    // console.log('result :>> ', result);
     const pics = result.hits;
     // controller(pics);
     // createDropdown(pics);
@@ -125,7 +125,7 @@ function buildCardsDefault(pics) {
   // cardsContainer.innerHTML = "";
   // cardDivContent.innerHTML = "";
   // const cardsContainer = document.getElementById("cards-container");
-  console.log(cardsContainer);
+  // console.log(cardsContainer);
 // console.log(pics.hits);
 
   for (let i = 0; i < pics.length; i++) {
