@@ -47,7 +47,7 @@
 // getData();
 
 // creating a fetch function
-const fetchPics = () => {
+const fetchPicsDefault = () => {
   // const url = "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&category=music&per_page=30&page=5";
   // by default i set filter view horizontal and color blue and editor's choice
   const url = "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&per_page=40&editors_choice=true&colors=blue&orientation=horizontal";
@@ -57,69 +57,69 @@ const fetchPics = () => {
   .then((result) =>{
     console.log('result :>> ', result);
     const pics = result.hits;
-    controller(pics);
+    // controller(pics);
     // createDropdown(pics);
-    // buildCards(pics);
+    buildCardsDefault(pics);
   });
 };
 
-// fetchPics();
+fetchPicsDefault();
 
 // filter by type using hard coded dropdown
 // new function that gonna fetch every type we choose from dropdown
 
-const fetchPicsVector = () =>{
-  const url = "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&per_page=40&editors_choice=true&colors=blue&orientation=horizontal&image_type=vector"
-  fetch (url).then((response) =>{
-    return response.json();
-  })
-  .then((result) =>{
-    console.log('result vector :>> ', result);
-    const picsVector = result.hits;
-    console.log('picsVector :>> ', picsVector);
-    // controller(picsVector);
-    buildCards(picsVector);
-    setEventListeners(picsVector);
-  })
-}
+// const fetchPicsVector = () =>{
+//   const url = "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&per_page=40&editors_choice=true&colors=blue&orientation=horizontal&image_type=vector"
+//   fetch (url).then((response) =>{
+//     return response.json();
+//   })
+//   .then((result) =>{
+//     console.log('result vector :>> ', result);
+//     const picsVector = result.hits;
+//     console.log('picsVector :>> ', picsVector);
+//     // controller(picsVector);
+//     buildCards(picsVector);
+//     setEventListeners(picsVector);
+//   })
+// }
 // fetchPicsVector();
 
 
 // generate DropDown options
-const createDropdown = (pics) => {
-  console.log('pics in dropdown :>> ', pics);
-  // const dropdown = document.getElementById("imageDropdown");
+// const createDropdown = (pics) => {
+//   console.log('pics in dropdown :>> ', pics);
+//   // const dropdown = document.getElementById("imageDropdown");
 
-  //we use map - that's a loop
-  const picsArray = pics.map((pic) =>{
-    return pic.type;
+//   //we use map - that's a loop
+//   const picsArray = pics.map((pic) =>{
+//     return pic.type;
     
-  });
+//   });
   
   // console.log('picsArray :>> ', picsArray);
   //we use spread operator ... inside of new Set array to make it an array []
   //plus we combine it with new Set element which saves only unique elements
-  const uniquePicsArray = [...new Set(picsArray)];
-  console.log('uniquePicsArray :>> ', uniquePicsArray);
+//   const uniquePicsArray = [...new Set(picsArray)];
+//   console.log('uniquePicsArray :>> ', uniquePicsArray);
 
 
-  //and instead of looping over our pics Array, we better loop over unique array
-  // picType here means the single item of an array, the naming can be different
-  uniquePicsArray.forEach((picType) => {
-    // console.log('pic :>> ', pic);
-    const option = document.createElement ("option");
-    //inside of a dropdown we have now type of each pic
-    option.innerText = picType;
+//   //and instead of looping over our pics Array, we better loop over unique array
+//   // picType here means the single item of an array, the naming can be different
+//   uniquePicsArray.forEach((picType) => {
+//     // console.log('pic :>> ', pic);
+//     const option = document.createElement ("option");
+//     //inside of a dropdown we have now type of each pic
+//     option.innerText = picType;
     
-    dropdown.appendChild(option);
+//     dropdown.appendChild(option);
 
-  });
+//   });
   
-};
+// };
 
 
 //we are building a card from Bootstrap library ourselves
-function buildCards(pics) {
+function buildCardsDefault(pics) {
   
   const cardsContainer = document.querySelector(".row");
   // cardsContainer.innerHTML = "";
@@ -172,7 +172,7 @@ function buildCards(pics) {
   
 }
 
-// buildCards();
+// buildCardsDefault();
 
 
 
@@ -194,7 +194,7 @@ function myFunction() {
 }
 
 //from here we control all our functions
-function controller (pics) {
+// function controller (pics) {
 //inside we have all the functions we gonna need
 // instead of calling them in different places
 //easier to debug
@@ -203,14 +203,14 @@ function controller (pics) {
 
 //create dropdown
 // createDropdown(pics);
-setEventListeners(pics);
+// setEventListeners(pics);
 
 //build cards with images
-buildCards(pics);
+// buildCards(pics);
 
 //set event listener
 //create filter functions
-}
+// }
 
 // const setEventListeners = (pics) => {
 //   const picDropdown = document.querySelector("#imageDropdown");
@@ -226,41 +226,41 @@ buildCards(pics);
 
 //Vector
 
-const setEventListeners = () => {
-  console.log('picsVector :>> ', picsVector);
-const picDropdown = document.getElementById("vectorDrop");
-console.log('picDropdown :>> ', picDropdown);
-picDropdown.addEventListener("click", () => {
-  console.log('dropdown selected :>> ');
+// const setEventListeners = () => {
+//   console.log('picsVector :>> ', picsVector);
+// const picDropdown = document.getElementById("vectorDrop");
+// console.log('picDropdown :>> ', picDropdown);
+// picDropdown.addEventListener("click", () => {
+//   console.log('dropdown selected :>> ');
 
 //here goes our filter function
 // fetchPicsVector();
 // setEventListeners(picsVector);
-cardDivContent.innerHTML = "";
-buildCards(picsVector);
-filterByDropdown(picsVector);
+// cardDivContent.innerHTML = "";
+// buildCards(picsVector);
+// filterByDropdown(picsVector);
 
-});
-};
+// });
+// };
 
 
-const filterByDropdown = (picsVector) => {
-  // get dropdown value
-  const picDropdown = document.getElementById("vectorDrop");
-  //we need to access to the value of the array:
-  const picDropdownValue = picDropdown.value;
-  console.log('picDropdownValue :>> ', picDropdownValue);
-  // console.log('pics in filt by dropdown:>> ', picsVector);
-  console.log("filtering by dropdown");
+// const filterByDropdown = (picsVector) => {
+//   // get dropdown value
+//   const picDropdown = document.getElementById("vectorDrop");
+//   //we need to access to the value of the array:
+//   const picDropdownValue = picDropdown.value;
+//   console.log('picDropdownValue :>> ', picDropdownValue);
+//   // console.log('pics in filt by dropdown:>> ', picsVector);
+//   console.log("filtering by dropdown");
 
-  const filteredArray = picsVector.filter((pic) => {
-    console.log('pic :>> ', pic);
-    return picDropdownValue === pic.type;
-  });
-  console.log('filteredArray :>> ', filteredArray);
-  cardDivContent.innerHTML = "";
-  buildCards(picsVector);
-};
+//   const filteredArray = picsVector.filter((pic) => {
+//     console.log('pic :>> ', pic);
+//     return picDropdownValue === pic.type;
+//   });
+//   console.log('filteredArray :>> ', filteredArray);
+//   cardDivContent.innerHTML = "";
+//   buildCards(picsVector);
+// };
 
 
 //filter by dropdown

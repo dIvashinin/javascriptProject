@@ -1,4 +1,5 @@
 // const fetchButton = document.getElementById("fetchButton");
+//here is the trouble: i am accessing all of them, not the one
 const dropdown = document.getElementsByClassName("dropdown-content");
 // const link = document.querySelectorAll("a");
 console.log("dropdown :>> ", dropdown);
@@ -27,14 +28,14 @@ const myFetch = (url)=> {
 //     return newUrl;
 // }
 
-function addEventListenerToDropdown(dropdownId) {
-    const dropdown = document.getElementById(dropdownId);
+// function addEventListenerToDropdown(dropdownId) {
+//     const dropdown = document.getElementById(dropdownId);
 
-    dropdown.addEventListener("change", (event) => {
-        const selectedValue = event.target.value;
-        
-    })
-}
+//     dropdown.addEventListener("change", (event) => {
+//         const selectedValue = event.target.value;
+
+//     })
+// }
 
 
 //if i try to do a function on all dropdown elemets, it won't let me
