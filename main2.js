@@ -48,12 +48,18 @@ const myFetch = (url)=> {
 
 searchButton.addEventListener ("change", (event) =>{
     console.log('event :>> ', event.target.value);
+    const navBar=document.getElementById("navbar");
     const searchBar = event.target.value;
     console.log('searchbar :>> ', searchBar);
     const fetchURL = `https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&q=${searchBar}`;
   
   console.log(fetchURL);
+
   myFetch(fetchURL);
+  
+  console.log('navBar :>> ', navBar);
+// how to hide a navbar after search request???
+  //   navBar.style.display = "none";
 });
 
 //if i try to do a function on all dropdown elemets, it won't let me
@@ -103,7 +109,7 @@ function buildCards(pics) {
   // console.log(pics.hits);
 
   for (let i = 0; i < pics.length; i++) {
-    // console.log(pics.hits);
+    console.log(pics.hits);
     //card div
     const cardDiv = document.createElement("div");
     cardDiv.setAttribute("class", "col-sm-12 col-md-4 col-lg-3 col-xxl-2 ");
