@@ -109,7 +109,7 @@ function buildCards(pics) {
   // console.log(pics.hits);
 
   for (let i = 0; i < pics.length; i++) {
-    console.log(pics.hits);
+    // console.log(pics.hits);
     //card div
     const cardDiv = document.createElement("div");
     cardDiv.setAttribute("class", "col-sm-12 col-md-4 col-lg-3 col-xxl-2 ");
@@ -150,5 +150,4 @@ function buildCards(pics) {
     cardBody.appendChild(p);
   }
 }
-
-// need to do 2 functions: one is going to display something by default, the 2nd will act after i press/choose/filter anything
+//foo
