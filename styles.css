@@ -160,8 +160,7 @@ display: inline;
   }  
   .fa-youtube {  
     background: #bb0000;  
-    color: white; 
-    
+    color: white;   
   }  
 
 .footer1 {
@@ -224,3 +223,4 @@ display: inline;
 .footer{
     grid-area: footer;
 } */
+
