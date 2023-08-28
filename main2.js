@@ -4,16 +4,18 @@
 const dropdown1 = document.getElementById("dropdown1");
 // const dropdown1Value = dropdown1.value;
 const dropdown2 = document.getElementById("dropdown2");
-const radio = document.getElementById("radio_colors");
-const goButton = document.getElementById("goColors");
+const colorRadios = document.querySelectorAll("input[name='color']");
+const goColorsButton = document.getElementById("goColors");
+// Declare selectedColor in a higher scope
+let selectedColor = null;
 const searchButton = document.getElementById("search");
 // const link = document.querySelectorAll("a");
 console.log("dropdown1 :>> ", dropdown1);
 // console.log('dropdown1Value :>> ', dropdown1Value);
 // console.log('typeof dropdown1Value :>> ', typeof dropdown1Value);
 console.log("dropdown2 :>> ", dropdown2);
-console.log('radio-colors :>> ', radio_colors);
-console.log('goButton :>> ', goButton);
+console.log('goColorsButton :>> ', goColorsButton);
+console.log('colorsRadios :>> ', colorRadios);
 
 // console.log('link :>> ', link);
 // console.log('dropdown.value :>> ', dropdown.value);
@@ -45,6 +47,30 @@ const myFetch = (url)=> {
 //         const selectedValue = event.target.value;
 //     })
 // }
+
+// Add event listener to radio buttons
+colorRadios.forEach(radio => {
+    radio.addEventListener("change", function() {
+      selectedColor = document.querySelector("input[name='color']:checked");
+      goColorsButton.disabled = !selectedColor;
+      console.log('selectedColor :>> ', selectedColor);
+      console.log('goColorsButton.disabled :>> ', goColorsButton.disabled);
+    });
+  });
+  console.log('selectedColor :>> ', selectedColor);
+  
+  // Add event listener to "go" button
+  goColorsButton.addEventListener("click", function() {
+    // Handle the action when the "go" button is clicked
+    console.log("Go button clicked");
+  
+    if (selectedColor) {
+      const fetchURL = `https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&colors=${selectedColor.value}`;
+      console.log(fetchURL);
+  
+      myFetch(fetchURL);
+    }
+  });
 
 searchButton.addEventListener ("change", (event) =>{
     console.log('event :>> ', event.target.value);
