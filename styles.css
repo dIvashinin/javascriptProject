@@ -72,7 +72,14 @@
 }
 #radio_colors{
 font-size: 14px;
+
 }
+/* #color input[type=radio]{
+    display: none;
+    
+} */
+
+
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
@@ -90,18 +97,34 @@ font-size: 14px;
     display: flex;
     font-size: 10px;
     /* border-style: dotted; */
-    gap: 4px;
-    margin-top: 8px;
+    /* gap: 4px; */
+    /* margin-top: 8px; */
 }
+#color{
+    /* opacity: 50%; */
+    /* background-image: linear-gradient(to right, grey, pink, beige); */
+}
+ 
+ .radio-colors label { 
+margin-right: 6px; 
+
+  }
+  /* #color input[type="radio"] { 
+    margin-right: 0px; 
+  } */
+
+
 #filter-elements{
-    /* border-style: dotted; */
+    border-style: dotted;
     background-color: #cfcfcf;
-    padding: 8px;
+    /* padding: 8px; */
     border-radius: 10px;
+    
 }
 
 html {
   background-color: rgb(173, 199, 227);
+  
 }
 
 .topimage {
@@ -129,8 +152,9 @@ display: inline;
 }
 .maintext2 {
     background-color: #c2c6db;
-    padding-left: 150px;
-    padding-right: 150px;
+    background-image: linear-gradient(to right, rgb(110, 145, 187), rgb(213, 232, 242));
+    padding-left: 50px;
+    padding-right: 50px;
     padding-bottom: 50px;
     font-size: 20px;
     margin-bottom: 20px;
@@ -239,4 +263,13 @@ display: inline;
 .footer{
     grid-area: footer;
 } */
-
+@media (max-width: 500px) {
+    .radio-colors label {
+      display: block; /* Stack elements vertically */
+      /* gap: 1px; */
+      /* padding: 0px; */
+      /* margin: 0px; */
+      /* height: 10px; */
+      font-size: 12px;
+    }
+  }
