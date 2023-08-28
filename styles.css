@@ -62,6 +62,17 @@
     background-color: #656565;
     transition: 0.5s;
 }
+#goColors{
+    border-style: solid;
+    border-color: #0420aa;
+    border-radius: 5px;
+    background-color: #cae0f1;
+    color: black;
+    font-size: 14px;
+}
+#radio_colors{
+font-size: 14px;
+}
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
@@ -132,6 +143,11 @@ display: inline;
   font-size: 14px;
   font-family: monospace;
   
+}
+#category, #color, #perpage{
+    border-style: solid;
+    border-width: 0.01px;
+    padding: 5px;
 }
 
 .maintext, .maintext2 {

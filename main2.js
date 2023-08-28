@@ -6,8 +6,15 @@ const dropdown1 = document.getElementById("dropdown1");
 const dropdown2 = document.getElementById("dropdown2");
 const colorRadios = document.querySelectorAll("input[name='color']");
 const goColorsButton = document.getElementById("goColors");
+
+const categoryRadios = document.querySelectorAll("input[name='category']");
+const perpageRadios = document.querySelectorAll("input[name='perpage']");
+
 // Declare selectedColor in a higher scope
 let selectedColor = null;
+let selectedCategory = null;
+let selectedPerPage = null;
+
 const searchButton = document.getElementById("search");
 // const link = document.querySelectorAll("a");
 console.log("dropdown1 :>> ", dropdown1);
@@ -58,18 +65,32 @@ colorRadios.forEach(radio => {
     });
   });
   console.log('selectedColor :>> ', selectedColor);
+
+categoryRadios.forEach(radio =>{
+    radio.addEventListener("change", function(){
+        selectedCategory = document.querySelector("input[name='category']:checked");
+        console.log('selectedCategory :>> ', selectedCategory);
+    });
+});
+
+perpageRadios.forEach(radio =>{
+    radio.addEventListener("change", function(){
+        selectedPerPage = document.querySelector("input[name='perpage']:checked");
+        console.log('selectedPerPage :>> ', selectedPerPage);
+    });
+});
   
   // Add event listener to "go" button
   goColorsButton.addEventListener("click", function() {
     // Handle the action when the "go" button is clicked
     console.log("Go button clicked");
   
-    if (selectedColor) {
-      const fetchURL = `https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&colors=${selectedColor.value}`;
+    // if (selectedColor) {
+      const fetchURL = `https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&colors=${selectedColor.value}&category=${selectedCategory.value}&per_page=${selectedPerPage.value}`;
       console.log(fetchURL);
   
       myFetch(fetchURL);
-    }
+    // }
   });
 
 searchButton.addEventListener ("change", (event) =>{
