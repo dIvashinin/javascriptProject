@@ -161,13 +161,22 @@ function buildCardsDefault(pics) {
     //another way of adding a class to a variable
     h5.classList.add("card-title");
     h5.innerText = pics[i].downloads;
-    // cardBody.appendChild(h5);
+    cardBody.appendChild(h5);
+    console.log('pics[i] :>> ', pics[i]);
 
     //adding p tag
     const p = document.createElement("p");
     p.classList.add("card-text");
     p.innerText = pics[i].tags;
     cardBody.appendChild(p);
+
+    const downloadLink = document.createElement("a");
+    downloadLink.href = pics[i].largeImageURL;
+    downloadLink.download="photo.jpg";
+    downloadLink.textContent = "download";
+
+    h5.appendChild(downloadLink);
+
   }
   
 }

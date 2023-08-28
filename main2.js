@@ -134,7 +134,7 @@ dropdown2.addEventListener ("change", (event) => {
  const selectedOption = myDropDown.value;
  console.log("selectedOption",selectedOption);
 // //   console.log("selectedOption :>> ", selectedOption);
-  const fetchURL = `https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&category=${selectedOption}`;
+  const fetchURL = `https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&orientation=${selectedOption}`;
   
   console.log(fetchURL);
   myFetch(fetchURL);
