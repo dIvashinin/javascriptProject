@@ -117,13 +117,13 @@ font-size: 14px;
     overflow: hidden;
   }
   
-  .image-card pic {
+  .image-card img {
     width: 100%;
     height: auto;
     transition: opacity 0.3s, transform 0.3s;
   }
   
-  .image-card:hover pic {
+  .image-card:hover img {
     opacity: 0.7;
     transform: scale(1.05);
   }
@@ -183,11 +183,6 @@ font-size: 14px;
     gap: 4px;
     margin-top: 8px;
 }
-
-#color{
-    /* opacity: 50%; */
-    /* background-image: linear-gradient(to right, grey, pink, beige); */
-}
  
  .radio-colors label { 
 margin: 2px;
@@ -199,6 +194,7 @@ height: 42px;
     border-radius: 100px;
     border-color: #828812;
     font-size: 17px;
+    padding: 6px;
  }
 
   /* #color input[type="radio"] { 
@@ -214,10 +210,7 @@ height: 42px;
     
 }
 
-html {
-  background-color: rgb(173, 199, 227);
-  
-}
+
 
 .topimage {
   background-image: url(/x_158a43c2.jpg);
@@ -238,13 +231,18 @@ html {
 
 #cards-container{
 /* background-color: rgb(241, 241, 241); */
-padding-top: 20px;
-padding-bottom: 20px;
+/* padding-top: 20px; */
+/* padding-bottom: 20px; */
 display: inline;
+
+}
+.row{
+    padding: 4px;
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(216, 216, 216));;
 }
 .maintext2 {
     background-color: #c2c6db;
-    background-image: linear-gradient(to right, rgb(110, 145, 187), rgb(213, 232, 242));
+    background-image: linear-gradient(to right, rgb(110, 145, 187), rgb(221, 236, 244));
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 50px;
@@ -266,6 +264,16 @@ display: inline;
     border-width: 0.01px;
     padding: 5px;
     background-color: #b9b9b9;
+}
+#category:hover, #color:hover, #perpage:hover{
+    background-color: #979696;
+    transition: 1s;
+}
+#goColors:hover{
+    background-color: #0d77c8;
+    color: #ffffff;
+    font-size: 24px;
+    transition: 1s;
 }
 
 .maintext, .maintext2 {
@@ -302,7 +310,7 @@ display: inline;
   /* display: inline; */
   /* position: static; */
   /* background-color:#a7afd2; */
-  background-image: linear-gradient(to right, rgb(110, 145, 187), rgb(213, 232, 242));
+  background-image: linear-gradient(to right, rgb(110, 145, 187), rgb(221, 236, 244));
   text-decoration: none;
   margin-top: 40px;
   color: black;
