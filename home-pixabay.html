@@ -163,38 +163,45 @@
         </div>
           <button id="fetchButton">let's go</button> -->
 
-        <div class="radio-colors" id="radio_colors">
+        <div class="radio-colors" id="radio_colors" role="group" aria-label="Basic radio toggle button group">
           <div id="color">
-          <input type="radio" id="black" name="color" value="black">
-          <label for="black" style="color: black;">black</label>
-          <input type="radio" id="red" name="color" value="red">
-          <label for="red" style="color: red;">red</label>
-          <input type="radio" id="blue" name="color" value="blue">
-          <label for="blue" style="color: blue;">blue</label>
-          <input type="radio" id="yellow" name="color" value="yellow">
-          <label for="yellow" style="color: yellow;">yellow</label>
-          <input type="radio" id="green" name="color" value="green">
-          <label for="green" style="color: green;">green</label>
-          <input type="radio" id="orange" name="color" value="orange">
-          <label for="orange" style="color: orange;">orange</label>
+          <input type="radio" class="btn-check" name="color" value="black" id="btnradio1" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio1" style="border-color: black;" >black</label>
+          <input type="radio" class="btn-check" name="color" value="red"  id="btnradio2" autocomplete="off">
+          <label class="btn btn-outline-primary" for="btnradio2" style="border-color: red;" >red</label>
+
+          <input type="radio" class="btn-check" name="color" value="blue" id="btnradio3" autocomplete="off">
+          <label class="btn btn-outline-primary" for="btnradio3" style="border-color: blue;" >blue</label>
+          <input type="radio" class="btn-check" name="color" value="yellow" id="btnradio4" autocomplete="off">
+          <label class="btn btn-outline-primary" for="btnradio4" style="border-color: yellow;" >yellow</label>
+          <input type="radio" class="btn-check" name="color" value="green" id="btnradio5" autocomplete="off">
+          <label class="btn btn-outline-primary" for="btnradio5" style="border-color: green;" >green</label>
+          <input type="radio" class="btn-check" name="color" value="orange" id="btnradio6" autocomplete="off">
+          <label class="btn btn-outline-primary" for="btnradio6" style="border-color: orange;" >orange</label>
+          <input type="radio" class="btn-check" name="color" value="pink" id="btnradio7" autocomplete="off">
+          <label class="btn btn-outline-primary" for="btnradio7" style="border-color: pink;" >pink</label>
+          <input type="radio" class="btn-check" name="color" value="white" id="btnradio8" autocomplete="off">
+          <label class="btn btn-outline-primary" for="btnradio8" style="border-color: white;" >white</label>
+          
+          
         </div>
-        <div id="category">
-          <input type="radio" id="food" name="category" value="food">
-          <label for="food" >food</label>
-          <input type="radio" id="buildings" name="category" value="buildings">
-          <label for="buildings" >buildings</label>
-          <input type="radio" id="science" name="category" value="science">
-          <label for="science" >science</label>
-          <input type="radio" id="nature" name="category" value="nature">
-          <label for="nature" >nature</label>
-          <input type="radio" id="places" name="category" value="places">
-          <label for="places" >places</label>
-          <input type="radio" id="computer" name="category" value="computer">
-          <label for="computer" >computer</label>
-          <input type="radio" id="music" name="category" value="music">
-          <label for="music" >music</label>
-          <input type="radio" id="business" name="category" value="business">
-          <label for="business" >business</label>
+        <div id="category" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="category" value="food" id="btnradio10" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio10">food</label>
+          <input type="radio" class="btn-check" name="category" value="buildings" id="btnradio11" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio11">buildings</label>
+          <input type="radio" class="btn-check" name="category" value="science" id="btnradio12" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio12">science</label>
+          <input type="radio" class="btn-check" name="category" value="nature" id="btnradio13" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio13">nature</label>
+          <input type="radio" class="btn-check" name="category" value="places" id="btnradio14" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio14">places</label>
+          <input type="radio" class="btn-check" name="category" value="computer" id="btnradio15" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio15">computer</label>
+          <input type="radio" class="btn-check" name="category" value="music" id="btnradio16" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio16">music</label>
+          <input type="radio" class="btn-check" name="category" value="business" id="btnradio17" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio17">business</label>
         </div>
 
         <div id="perpage">
