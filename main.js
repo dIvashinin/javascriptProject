@@ -139,6 +139,9 @@ function buildCardsDefault(pics) {
 
     //now the image// we create a variable
     const image = document.createElement("img");
+    // image.classList.add('image-card');
+    // const downloadIcon = document.createElement('i');
+    // downloadIcon.classList.add('download-icon', 'fa','fa-download');
     // img.innerHTML="";
     //set source// mind the syntax!
     // result.hits[i]
@@ -148,8 +151,10 @@ function buildCardsDefault(pics) {
     //we add bootstrap class
     image.setAttribute("class", "card-img-top");
     
+    
     //and our image goes in this cardDiv we made before
     cardDiv.appendChild(image);
+    // cardDiv.appendChild(downloadIcon);
 
     //now making the body of a card
     const cardBody = document.createElement("div");
@@ -161,7 +166,7 @@ function buildCardsDefault(pics) {
     //another way of adding a class to a variable
     h5.classList.add("card-title");
     h5.innerText = pics[i].downloads;
-    cardBody.appendChild(h5);
+    // cardBody.appendChild(h5);
     console.log('pics[i] :>> ', pics[i]);
 
     //adding p tag
@@ -170,12 +175,12 @@ function buildCardsDefault(pics) {
     p.innerText = pics[i].tags;
     cardBody.appendChild(p);
 
-    const downloadLink = document.createElement("a");
-    downloadLink.href = pics[i].largeImageURL;
-    downloadLink.download="photo.jpg";
-    downloadLink.textContent = "download";
+    // const downloadLink = document.createElement("a");
+    // downloadLink.href = pics[i].largeImageURL;
+    // downloadLink.download="photo.jpg";
+    // downloadLink.textContent = "download";
 
-    h5.appendChild(downloadLink);
+    // h5.appendChild(downloadLink);
 
   }
   

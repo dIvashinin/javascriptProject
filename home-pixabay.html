@@ -163,8 +163,8 @@
         </div>
           <button id="fetchButton">let's go</button> -->
 
-        <div class="radio-colors" id="radio_colors" role="group" aria-label="Basic radio toggle button group">
-          <div id="color">
+        <div class="radio-colors" id="radio_colors" role="group" aria-label="Basic radio toggle button group" >
+          <div id="color" class="hint-area" data-hint="choose any color">
           <input type="radio" class="btn-check" name="color" value="black" id="btnradio1" autocomplete="off" checked>
           <label class="btn btn-outline-primary" for="btnradio1" style="border-color: black;" >black</label>
           <input type="radio" class="btn-check" name="color" value="red"  id="btnradio2" autocomplete="off">
@@ -185,7 +185,7 @@
           
           
         </div>
-        <div id="category" role="group" aria-label="Basic radio toggle button group">
+        <div id="category" role="group" aria-label="Basic radio toggle button group" class="hint-area" data-hint="add a category">
           <input type="radio" class="btn-check" name="category" value="food" id="btnradio10" autocomplete="off" checked>
           <label class="btn btn-outline-primary" for="btnradio10">food</label>
           <input type="radio" class="btn-check" name="category" value="buildings" id="btnradio11" autocomplete="off" checked>
@@ -204,18 +204,21 @@
           <label class="btn btn-outline-primary" for="btnradio17">business</label>
         </div>
 
-        <div id="perpage">
-          <input type="radio" id="10" name="perpage" value="10">
-          <label for="10" >10</label>
-          <input type="radio" id="20" name="perpage" value="20">
-          <label for="20" >20</label>
-          <input type="radio" id="30" name="perpage" value="30">
-          <label for="30" >30</label>
-          <input type="radio" id="40" name="perpage" value="40">
-          <label for="40" >40</label>
+        <div id="perpage" role="group" aria-label="Basic radio toggle button group" class="hint-area" data-hint="pics per page">
+          <input type="radio" class="btn-check" name="perpage" value="10" id="btnradio20" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio20">10</label>
+          <input type="radio" class="btn-check" name="perpage" value="20" id="btnradio21" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio21">20</label>
+          <input type="radio" class="btn-check" name="perpage" value="30" id="btnradio22" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio22">30</label>
+          <input type="radio" class="btn-check" name="perpage" value="40" id="btnradio23" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio23">40</label>
+          
+          
         </div>
-
-          <button class="goColors" id="goColors" disabled>go</button>
+          <div class="hint-area" data-hint="let's go!">
+            <button class="goColors" id="goColors" disabled>go</button>
+          </div>
         </div>
 
         <!-- <div class="form-radio form-radio-inline">

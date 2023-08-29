@@ -67,15 +67,95 @@
     border-style: solid;
     border-color: #0420aa;
     border-radius: 5px;
-    background-color: #cae0f1;
+    background-color: #1097ff;
     color: black;
-    font-size: 14px;
+    font-size: 22px;
+    height: 110px;
 }
 #radio_colors{
 font-size: 14px;
-
 }
 
+/* Style for the hint container */
+.hint-area {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 10px;
+  }
+  
+  /* Style for the hint text */
+  .hint-area::after {
+    content: attr(data-hint);
+    position: absolute;
+    bottom: -34px; /* Adjust as needed */
+    left: 25%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  
+  /* Show the hint text on hover */
+  .hint-area:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+/* trying to add a hover over and download */
+  /* .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  } */
+  
+  .image-card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .image-card pic {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  
+  .image-card:hover pic {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+  
+  .image-card:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+  }
+  
+  .download-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  
+  .image-card:hover .download-icon {
+    opacity: 1;
+  }
+  
+
+
+  
 
 /* #color input[type=radio]{
     display: none;
@@ -110,9 +190,17 @@ font-size: 14px;
 }
  
  .radio-colors label { 
-margin-right: 6px; 
-
+margin: 2px;
+border-width: 4px; 
+color: black;
+height: 42px;
   }
+ #perpage label {
+    border-radius: 100px;
+    border-color: #828812;
+    font-size: 17px;
+ }
+
   /* #color input[type="radio"] { 
     margin-right: 0px; 
   } */
