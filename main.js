@@ -46,8 +46,8 @@
 // };
 // getData();
 
-// creating a fetch function
 const fetchPicsDefault = () => {
+  // creating a default fetch function
   // const url = "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&category=music&per_page=30&page=5";
   // by default i set filter view horizontal and color blue and editor's choice
   const url =
@@ -66,56 +66,6 @@ const fetchPicsDefault = () => {
 };
 
 fetchPicsDefault();
-
-// filter by type using hard coded dropdown
-// new function that gonna fetch every type we choose from dropdown
-
-// const fetchPicsVector = () =>{
-//   const url = "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&per_page=40&editors_choice=true&colors=blue&orientation=horizontal&image_type=vector"
-//   fetch (url).then((response) =>{
-//     return response.json();
-//   })
-//   .then((result) =>{
-//     console.log('result vector :>> ', result);
-//     const picsVector = result.hits;
-//     console.log('picsVector :>> ', picsVector);
-//     // controller(picsVector);
-//     buildCards(picsVector);
-//     setEventListeners(picsVector);
-//   })
-// }
-// fetchPicsVector();
-
-// generate DropDown options
-// const createDropdown = (pics) => {
-//   console.log('pics in dropdown :>> ', pics);
-//   // const dropdown = document.getElementById("imageDropdown");
-
-//   //we use map - that's a loop
-//   const picsArray = pics.map((pic) =>{
-//     return pic.type;
-
-//   });
-
-// console.log('picsArray :>> ', picsArray);
-//we use spread operator ... inside of new Set array to make it an array []
-//plus we combine it with new Set element which saves only unique elements
-//   const uniquePicsArray = [...new Set(picsArray)];
-//   console.log('uniquePicsArray :>> ', uniquePicsArray);
-
-//   //and instead of looping over our pics Array, we better loop over unique array
-//   // picType here means the single item of an array, the naming can be different
-//   uniquePicsArray.forEach((picType) => {
-//     // console.log('pic :>> ', pic);
-//     const option = document.createElement ("option");
-//     //inside of a dropdown we have now type of each pic
-//     option.innerText = picType;
-
-//     dropdown.appendChild(option);
-
-//   });
-
-// };
 
 //we are building a card from Bootstrap library ourselves
 function buildCardsDefault(pics) {
@@ -184,7 +134,7 @@ function buildCardsDefault(pics) {
 // buildCardsDefault();
 
 // function from W3Schools read more--read less
-function myFunction() {
+function showText() {
   var dots = document.getElementById("dots");
   var moreText = document.getElementById("more");
   var btnText = document.getElementById("myBtn");

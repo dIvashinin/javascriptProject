@@ -57,21 +57,9 @@ searchButton.addEventListener("change", (event) => {
     myFetch(fetchURL);
   
     console.log("navBar :>> ", navBar);
-    // how to hide a navbar after search request???
+    // how to hide a navbar after search request??? not there yet
     //   navBar.style.display = "none";
   });
-
-// const constructUrl = (values) => {
-//     let newUrl = '';
-//     return newUrl;
-// }
-
-// function addEventListenerToDropdown(dropdownId) {
-//     const dropdown = document.getElementById(dropdownId);
-//     dropdown.addEventListener("change", (event) => {
-//         const selectedValue = event.target.value;
-//     })
-// }
 
 // Add event listener to radio buttons
 colorRadios.forEach((radio) => {
@@ -145,9 +133,6 @@ dropdown2.addEventListener("change", (event) => {
   myFetch(fetchURL);
 });
 
-// function fetchURL () {
-
-// }
 
 //we are building a card from Bootstrap library ourselves
 function buildCards(pics) {
