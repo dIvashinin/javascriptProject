@@ -1,9 +1,9 @@
 // function that builds table and fills it with pics from api
 // let tableBody = document.querySelector("tbody");
 // function buildPicsTable() {
-  // getElementsByTagName returns an ARRAY of elements (even if there is just one)
-  // let tableBodyArray = document.getElementsByTagName("tbody");
-  // console.log('tableBodyArray :>> ', tableBodyArray);
+// getElementsByTagName returns an ARRAY of elements (even if there is just one)
+// let tableBodyArray = document.getElementsByTagName("tbody");
+// console.log('tableBodyArray :>> ', tableBodyArray);
 //   console.log(tableBody);
 
 //   for (let i = 0; i < pics.length; i++) {
@@ -22,7 +22,7 @@
 //     row.appendChild(likes);
 //     row.appendChild(imageWidth);
 //     tableBody.appendChild(row);
-    // tableBodyArray[0].appendChild(row)
+// tableBodyArray[0].appendChild(row)
 //   }
 // }
 // buildPicsTable();
@@ -42,7 +42,7 @@
 //       console.log("result", result);
 //       return result;
 //     });
-    
+
 // };
 // getData();
 
@@ -50,17 +50,19 @@
 const fetchPicsDefault = () => {
   // const url = "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&category=music&per_page=30&page=5";
   // by default i set filter view horizontal and color blue and editor's choice
-  const url = "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&per_page=40&editors_choice=true&colors=blue&orientation=horizontal";
-  fetch (url).then((response) => {
-    return response.json();
-  })
-  .then((result) =>{
-    // console.log('result :>> ', result);
-    const pics = result.hits;
-    // controller(pics);
-    // createDropdown(pics);
-    buildCardsDefault(pics);
-  });
+  const url =
+    "https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&per_page=40&editors_choice=true&colors=blue&orientation=horizontal";
+  fetch(url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((result) => {
+      // console.log('result :>> ', result);
+      const pics = result.hits;
+      // controller(pics);
+      // createDropdown(pics);
+      buildCardsDefault(pics);
+    });
 };
 
 fetchPicsDefault();
@@ -84,7 +86,6 @@ fetchPicsDefault();
 // }
 // fetchPicsVector();
 
-
 // generate DropDown options
 // const createDropdown = (pics) => {
 //   console.log('pics in dropdown :>> ', pics);
@@ -93,15 +94,14 @@ fetchPicsDefault();
 //   //we use map - that's a loop
 //   const picsArray = pics.map((pic) =>{
 //     return pic.type;
-    
+
 //   });
-  
-  // console.log('picsArray :>> ', picsArray);
-  //we use spread operator ... inside of new Set array to make it an array []
-  //plus we combine it with new Set element which saves only unique elements
+
+// console.log('picsArray :>> ', picsArray);
+//we use spread operator ... inside of new Set array to make it an array []
+//plus we combine it with new Set element which saves only unique elements
 //   const uniquePicsArray = [...new Set(picsArray)];
 //   console.log('uniquePicsArray :>> ', uniquePicsArray);
-
 
 //   //and instead of looping over our pics Array, we better loop over unique array
 //   // picType here means the single item of an array, the naming can be different
@@ -110,23 +110,21 @@ fetchPicsDefault();
 //     const option = document.createElement ("option");
 //     //inside of a dropdown we have now type of each pic
 //     option.innerText = picType;
-    
+
 //     dropdown.appendChild(option);
 
 //   });
-  
-// };
 
+// };
 
 //we are building a card from Bootstrap library ourselves
 function buildCardsDefault(pics) {
-  
   const cardsContainer = document.querySelector(".row");
   // cardsContainer.innerHTML = "";
   // cardDivContent.innerHTML = "";
   // const cardsContainer = document.getElementById("cards-container");
   // console.log(cardsContainer);
-// console.log(pics.hits);
+  // console.log(pics.hits);
 
   for (let i = 0; i < pics.length; i++) {
     // console.log(pics.hits);
@@ -150,8 +148,7 @@ function buildCardsDefault(pics) {
     image.setAttribute("alt", pics[i].tags);
     //we add bootstrap class
     image.setAttribute("class", "card-img-top");
-    
-    
+
     //and our image goes in this cardDiv we made before
     cardDiv.appendChild(image);
     // cardDiv.appendChild(downloadIcon);
@@ -164,14 +161,14 @@ function buildCardsDefault(pics) {
     //card header
     const h5 = document.createElement("h5");
     //another way of adding a class to a variable
-    h5.classList.add("card-title");
+    // h5.classList.add("card-title");
     h5.innerText = pics[i].downloads;
     // cardBody.appendChild(h5);
-    console.log('pics[i] :>> ', pics[i]);
+    // console.log("pics[i] :>> ", pics[i]);
 
     //adding p tag
     const p = document.createElement("p");
-    p.classList.add("card-text");
+    // p.classList.add("card-text");
     p.innerText = pics[i].tags;
     cardBody.appendChild(p);
 
@@ -181,14 +178,10 @@ function buildCardsDefault(pics) {
     // downloadLink.textContent = "download";
 
     // h5.appendChild(downloadLink);
-
-  }
-  
-}
+  };
+};
 
 // buildCardsDefault();
-
-
 
 // function from W3Schools read more--read less
 function myFunction() {
@@ -204,8 +197,8 @@ function myFunction() {
     dots.style.display = "none";
     btnText.innerHTML = "read less";
     moreText.style.display = "inline";
-  }
-}
+  };
+};
 
 //from here we control all our functions
 // function controller (pics) {
@@ -230,13 +223,12 @@ function myFunction() {
 //   const picDropdown = document.querySelector("#imageDropdown");
 //   picDropdown.addEventListener("change", () => {
 //   // console.log('dropdown selected :>> ');
-  
+
 //   //here goes our filter function
 //   filterByDropdown(pics);
-  
+
 //   });
 //   };
-  
 
 //Vector
 
@@ -257,7 +249,6 @@ function myFunction() {
 // });
 // };
 
-
 // const filterByDropdown = (picsVector) => {
 //   // get dropdown value
 //   const picDropdown = document.getElementById("vectorDrop");
@@ -275,7 +266,6 @@ function myFunction() {
 //   cardDivContent.innerHTML = "";
 //   buildCards(picsVector);
 // };
-
 
 //filter by dropdown
 
