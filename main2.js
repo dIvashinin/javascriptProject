@@ -17,13 +17,13 @@ let selectedPerPage = null;
 
 const searchButton = document.getElementById("search");
 // const link = document.querySelectorAll("a");
-console.log('searchButton :>> ', searchButton);
-console.log("dropdown1 :>> ", dropdown1);
+// console.log('searchButton :>> ', searchButton);
+// console.log("dropdown1 :>> ", dropdown1);
 // console.log('dropdown1Value :>> ', dropdown1Value);
 // console.log('typeof dropdown1Value :>> ', typeof dropdown1Value);
-console.log("dropdown2 :>> ", dropdown2);
-console.log("goColorsButton :>> ", goColorsButton);
-console.log("colorsRadios :>> ", colorRadios);
+// console.log("dropdown2 :>> ", dropdown2);
+// console.log("goColorsButton :>> ", goColorsButton);
+// console.log("colorsRadios :>> ", colorRadios);
 
 // console.log('link :>> ', link);
 // console.log('dropdown.value :>> ', dropdown.value);
@@ -32,7 +32,7 @@ console.log("colorsRadios :>> ", colorRadios);
 const myFetch = (url) => {
   fetch(url)
     .then((response) => {
-      console.log(response);
+    //   console.log(response);
       return response.json();
     })
     .then((result) => {
@@ -46,17 +46,17 @@ const myFetch = (url) => {
 
 //separate function for searchbar
 searchButton.addEventListener("change", (event) => {
-    console.log("event :>> ", event.target.value);
+    // console.log("event :>> ", event.target.value);
     const navBar = document.getElementById("navbar");
     const searchBar = event.target.value;
-    console.log("searchbar :>> ", searchBar);
+    // console.log("searchbar :>> ", searchBar);
     const fetchURL = `https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&q=${searchBar}`;
   
-    console.log(fetchURL);
+    // console.log(fetchURL);
   
     myFetch(fetchURL);
   
-    console.log("navBar :>> ", navBar);
+    // console.log("navBar :>> ", navBar);
     // how to hide a navbar after search request??? not there yet
     //   navBar.style.display = "none";
   });
@@ -67,34 +67,34 @@ colorRadios.forEach((radio) => {
     selectedColor = document.querySelector("input[name='color']:checked");
     // we update disabled property - if truthy
     goColorsButton.disabled = !selectedColor;
-    console.log("selectedColor :>> ", selectedColor);
-    console.log("goColorsButton.disabled :>> ", goColorsButton.disabled);
+    // console.log("selectedColor :>> ", selectedColor);
+    // console.log("goColorsButton.disabled :>> ", goColorsButton.disabled);
   });
 });
-console.log("selectedColor :>> ", selectedColor);
+// console.log("selectedColor :>> ", selectedColor);
 
 categoryRadios.forEach((radio) => {
   radio.addEventListener("change", function () {
     selectedCategory = document.querySelector("input[name='category']:checked");
-    console.log("selectedCategory :>> ", selectedCategory);
+    // console.log("selectedCategory :>> ", selectedCategory);
   });
 });
 
 perpageRadios.forEach((radio) => {
   radio.addEventListener("change", function () {
     selectedPerPage = document.querySelector("input[name='perpage']:checked");
-    console.log("selectedPerPage :>> ", selectedPerPage);
+    // console.log("selectedPerPage :>> ", selectedPerPage);
   });
 });
 
 // Add event listener to "go" button
 goColorsButton.addEventListener("click", function () {
   // Handle the action when the "go" button is clicked
-  console.log("Go button clicked");
+//   console.log("Go button clicked");
 
   // if (selectedColor) {
   const fetchURL = `https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&colors=${selectedColor.value}&category=${selectedCategory.value}&per_page=${selectedPerPage.value}`;
-  console.log(fetchURL);
+//   console.log(fetchURL);
 
   myFetch(fetchURL);
   // }
@@ -104,32 +104,32 @@ goColorsButton.addEventListener("click", function () {
 //separate function for the 1st dropdown
 //if i try to do a function on all dropdown elemets, it won't let me
 dropdown1.addEventListener("change", (event) => {
-  console.log("event.target :>> ", event);
+//   console.log("event.target :>> ", event);
   //   // const selectedOption = dropdown.dataset.value;
   // //   const selectedOption = "vector";
   const myDropDown = document.getElementById("dropdown1");
   //  const selectedOption = myDropDown.children.dataset.value;
   const selectedOption = myDropDown.value;
-  console.log("selectedOption", selectedOption);
+//   console.log("selectedOption", selectedOption);
   // //   console.log("selectedOption :>> ", selectedOption);
   const fetchURL = `https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&image_type=${selectedOption}`;
 
-  console.log(fetchURL);
+//   console.log(fetchURL);
   myFetch(fetchURL);
 });
 //separate for the 2nd dropdown
 dropdown2.addEventListener("change", (event) => {
-  console.log("event.target :>> ", event.target.value);
+//   console.log("event.target :>> ", event.target.value);
   //   // const selectedOption = dropdown.dataset.value;
   // //   const selectedOption = "vector";
   const myDropDown = document.getElementById("dropdown2");
   //  const selectedOption = myDropDown.children.dataset.value;
   const selectedOption = myDropDown.value;
-  console.log("selectedOption", selectedOption);
+//   console.log("selectedOption", selectedOption);
   // //   console.log("selectedOption :>> ", selectedOption);
   const fetchURL = `https://pixabay.com/api/?key=38816654-eccc30260c20a5ca45fecc085&orientation=${selectedOption}`;
 
-  console.log(fetchURL);
+//   console.log(fetchURL);
   myFetch(fetchURL);
 });
 
@@ -141,7 +141,7 @@ function buildCards(pics) {
   cardsContainer.innerHTML = "";
   // cardDivContent.innerHTML = "";
   // const cardsContainer = document.getElementById("cards-container");
-  console.log(cardsContainer);
+//   console.log(cardsContainer);
   // console.log(pics.hits);
 
   for (let i = 0; i < pics.length; i++) {
